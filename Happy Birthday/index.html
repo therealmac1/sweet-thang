@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sweet thang</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 30px;
+      padding: 3px;
+      animation: pop 2s ease-out;
+      color: red;
+      width: 100%;
+      height: 13vh;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+    #slideshow {
+      width: 90%;
+      max-width: 450px;
+      height: 450px;
+      margin: 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    #slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    #slideshow img.active {
+      display: block;
+      animation: fade 2s ease-in-out;
+    }
+    @keyframes fade {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes pop {
+      0% {transform: scale(0);}
+      100% {transform: scale(1);}
+    }
+    #audioPlayer {
+      margin-top: 40px;
+    }
+
+
+.flower-splash {
+  position: absolute;
+  top: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translateY(50%);
+  animation: splashUp 2s ease-out forwards;
+  z-index: 1;
+  overflow: hidden;
+}
+.flower-splash img {
+  width: 100%;
+  height: auto;
+}
+.flower-splash.left {
+  left: 10px;
+}
+.flower-splash.right {
+  right: 10px;
+}
+
+
+@keyframes splashUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%) scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20%) scale(1.2) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-60%) scale(1) rotate(-15deg);
+  }
+
+
+}
+
+
+
+/* 📱 Mobile Adjustment - Move flowers to center between heading and slideshow */
+@media (max-width: 768px) {
+    .h1 {
+      font-size: 0.5rem;
+      margin-top: 10px;
+      padding: 3px;
+      animation: pop 2s ease-out;
+      color: red;
+      width: 100%;
+      height: 9vh;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .flower-splash {
+        position: absolute;
+        top: 75%;
+        width: 250px;
+        height: 250px;
+        transform: translateY(50%);
+        animation: splashUp 2s ease-out forwards;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    #audioPlayer {
+      margin-top: 140px;
+    }
+  }
+
+
+  </style>
+</head>
+<body>
+
+    <div class="flower-splash left">
+        <img src="images/images_flowers-removebg-preview.png" alt="Flower Splash">
+    </div>
+    <div class="flower-splash right">
+        <img src="images/images_flowers-removebg-preview.png" alt="Flower Splash">
+    </div>
+      
+  <h1><marquee>HAPPY BIRTHDAY, SWEET THANG!............I LOVE YOU, ALWAYS.</marquee></h1>
+  <div id="slideshow">
+    <!-- Images will go here -->
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.24_44385fb8 - Copy.jpg" class="active" alt="Slide 1">
+    <!-- <img src="images/WhatsApp Image 2025-04-20 at 21.22.24_44385fb8.jpg" alt="Slide 2"> -->
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.25_cec7be3e.jpg" alt="Slide 3">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.29_1bd1499d.jpg" alt="Slide 4">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.29_f50e5b71.jpg" alt="Slide 5">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.30_391259b6.jpg" alt="Slide 6">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.30_6dad1f1d.jpg" alt="Slide 7">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.30_85428fbd.jpg" alt="Slide 8">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.31_1601ee2b.jpg" alt="Slide 9">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.31_bb23fbfc.jpg" alt="Slide 10">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.31_b61a3355.jpg" alt="Slide 11">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.32_97f7c3dc.jpg" alt="Slide 12">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.32_f81287e7.jpg" alt="Slide 13">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.33_62e0783b.jpg" alt="Slide 14">
+    <img src="images/WhatsApp Image 2025-04-20 at 21.22.33_7a42a70c.jpg" alt="Slide 15">
+  </div>
+
+  <audio id="audioPlayer" controls autoplay>
+    <source src="images/Voiceover Birthday wish.unknown" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Slideshow logic
+    const slides = document.querySelectorAll("#slideshow img");
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 4000);
+  </script>
+</body>
+</html>
